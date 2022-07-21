@@ -5,9 +5,11 @@ html {
 body {
     background: url('/media/homepage_background.jpeg') no-repeat center center fixed;
     background-size: cover;
-    height: 563px;
+    height: calc(100vh - 164px);
+    color: #555;
     font-family: 'Montserrat';
 }
+
 
 /* from Bulma */
 .icon {
