@@ -38,16 +38,17 @@
 
     <title>Handy Thoughts {% block extra_title %}{% endblock %}</title>
   </head>
+
   <body>
     <header class="container-fluid fixed-top">
     <!--free delivery banner at the top of the page-->
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
+        <div class="row bg-dark text-center">
+            <div id="delivery banner" class="col text-white">
                 <h6 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h6>                
             </div>            
         </div>
-    <!-- contents on the top-->
-      <div id="topnav" class="row bg-white bg-white pt-lg-2 d-none d-lg-flex">
+    <!-- contents on the top only on big screen-->
+      <div id="topnav" class="row bg-light bg-light pt-lg-2 d-none d-lg-flex">
      <!-- logo -->
         <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -82,10 +83,10 @@
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                            <a href="#" class="dropdown-item">Product Management</a>
                         {% endif %}
-                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        <a href="3#" class="dropdown-item">My Profile</a>
+                        <a href="" class="dropdown-item">Logout</a>
                     {% else %}
                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                         <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -110,15 +111,18 @@
         </div>
     </div>
      <!-- toggler button -->
-    <div class="row bg-white">
+    <div class="row bg-light">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        
+            {% include 'includes/mobile-top-header.html' %}
+            {% include 'includes/main-nav.html' %}
         </nav>
     </div>
 </header>
+
+
 
 
     {% block page_header %}
@@ -131,5 +135,75 @@
     {% endblock %}
 
 
-  </body>
+</body>
+
+<footer class="footer text-center text-black" style="background-color: #F8F9FA;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-black m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-black m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-black m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-black m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-black m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-black m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: #F8F9FA;">
+      © 2022 Copyright:
+      <a class="text-black" href="https://mdbootstrap.com/">HandyThoughts.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 </html>

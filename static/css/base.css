@@ -3,13 +3,19 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background.jpeg') no-repeat center center fixed;
+    background: url('/media/bakground.jpeg') no-repeat center center fixed;
+    background-color: F8F9FA;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Montserrat';
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 
 /* from Bulma */
 .icon {
@@ -57,7 +63,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #F8F9FA;
     color: white;
 }
 
