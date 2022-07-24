@@ -11,6 +11,19 @@ body {
     font-family: 'Montserrat';
 }
 
+.card-img-top {
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+    margin-top: 5px;
+}
+
+.card-img-detail {
+    height: 400px;
+    width: auto;
+    object-fit: cover;
+    margin-top: 5px;
+}
 .footer {
     left: 0;
     bottom: 0;
