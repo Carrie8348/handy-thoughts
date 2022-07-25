@@ -11,6 +11,8 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
 
     if 'category' in request.GET:
             categories = request.GET['category'].split(',')
