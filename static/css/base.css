@@ -24,6 +24,17 @@ body {
     object-fit: cover;
     margin-top: 5px;
 }
+
+#product-detail-title{
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+#product-brand {
+    font-style:italic;
+}
+
+
 .footer {
     left: 0;
     bottom: 0;
