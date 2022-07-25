@@ -17,24 +17,24 @@
                 <a href="{% url 'products' %}" class="dropdown-item ">All Products</a>
             </div>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="planners-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=Planners" id="planners-link"  aria-haspopup="true" aria-expanded="false">
                 Planners
             </a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="bullet-journals-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=Bullet-Journals" id="bullet-journals-link"  aria-haspopup="true" aria-expanded="false">
                 Bullet Journals
             </a>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="notebooks-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'products' %}?category=Notebooks" id="notebooks-link"  aria-haspopup="true" aria-expanded="false">
                 Notebooks
             </a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="Accessories-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'products' %}?category=Accessories" id="Accessories-link" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
         </li>
