@@ -19,8 +19,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
-    
-
     {% endblock %}
 
     {% block extra_css %}
@@ -40,7 +38,7 @@
   </head>
 
   <body>
-    <header class="container-fluid fixed-top">
+    <header class=" container-fluid fixed-top">
     <!--free delivery banner at the top of the page-->
         <div class="row bg-dark text-center">
             <div id="delivery banner" class="col text-white">
@@ -95,7 +93,8 @@
                 </div>
             </li>
                 <li class="list-inline-item">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" 
+                      href="{% url 'view_shopping_cart' %}">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                             <p class="my-0">
@@ -132,7 +131,8 @@
 
     {% block postloadjs %}
     {% endblock %}
-    <footer class="footer text-center text-black" style="background-color: #F8F9FA;">
+    
+    <footer class="footer text-center text-black w-100 pt-1">
       <!-- Grid container -->
       <div class="container pt-4">
         <!-- Section: Social media -->

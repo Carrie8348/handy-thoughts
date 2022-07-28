@@ -6,7 +6,7 @@ body {
     background: url('/media/bakground.jpeg') no-repeat center center fixed;
     background-color: F8F9FA;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 100vh;
     color: #555;
     font-family: 'Montserrat';
 }
@@ -39,6 +39,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
+    background-color: #F8F9FA;
   }
 
 /* from Bulma */
