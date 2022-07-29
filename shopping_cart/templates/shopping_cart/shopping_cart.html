@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
-
+{% load shopping_cart_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -47,7 +46,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6 order-sm-last">
                                     <p class="my-0">Price Each: ${{ item.product.price }}</p>
-                                    <p><strong>Subtotal: </strong>${{ item.product.price  }}</p>
+                                    <p><strong>Subtotal: </strong>${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     {% include "shopping_cart/quantity-form.html" %}
@@ -88,7 +87,7 @@
                                         {% include "shopping_cart/quantity-form.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price  }}</p>
+                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -138,7 +137,6 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
         var url = `/shopping_cart/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
