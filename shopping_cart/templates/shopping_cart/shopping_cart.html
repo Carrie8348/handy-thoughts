@@ -29,12 +29,6 @@
                                 {% include "shopping_cart/shopping_cart_total.html" %}
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                {% include "shopping_cart/checkout-buttons.html" %}
-                                <p class="text-muted mb-5">A summary of your shopping cart contents is below</p>
-                            </div>
-                        </div>
                         {% for item in shopping_cart_items %}
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-2">
