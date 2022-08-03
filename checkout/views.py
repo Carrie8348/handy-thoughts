@@ -11,6 +11,9 @@ import stripe
 
 # Create your views here.
 def checkout(request):
+    """
+    Prevents entering checkout with empty bag
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -31,7 +34,7 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
-            for item_id, item_data in bag.items():
+            for item_id, item_data in shopping_cart.items():
                 try:
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
