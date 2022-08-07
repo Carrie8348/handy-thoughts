@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404
+)
+from django.views import generic, View
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
@@ -7,18 +10,13 @@ from .forms import ReviewForm
 
 # Create your views here.
 def all_products(request):
-    """ A view to show all products, including sorting and search queries"""
+    """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
-
-    if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
 
     if request.GET:
         if 'sort' in request.GET:
@@ -29,8 +27,6 @@ def all_products(request):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
-            if sortkey == 'brand':
-                sortkey = 'brand'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -62,17 +58,46 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+class product_detail(View):
 
-def product_detail(request, product_id):
-    """ A view to show individual product details """
+    def get(self, request, *args, **kwargs):
+        product = get_object_or_404(Product, pk=product_id)
+        reviews = product.reviews
 
-    product = get_object_or_404(Product, pk=product_id)
-    reviews = product.reviews
+        return render(
+            request,
+            "product_detail.html",
+            {
+                "product": product,
+                "reviews": reviews,
+                "reviewed": False,
+                "reviews_form": ReviewForm()
+            },
+        )
 
-    context = {
-        'product': product,
-        'reviews': ReviewForm()
-    }
+    def post(self, request, slug, *args, **kwargs):
+        """ A view to show individual product details """
 
-    return render(request, 'products/product_detail.html', context)
+        product = get_object_or_404(Product, pk=product_id)
+        reviews = product.reviews
 
+        reviews_form = ReviewForm(data=request.POST)
+        if reviews_form.is_valid():
+            reviews_form.instance.email = request.user.email
+            reviews_form.instance.name = request.user.username
+            reviews = reviews_form.save(commit=False)
+            reviews.post = post
+            reviews.save()
+        else:
+            reviews_form = ReviewForm()
+
+        return render(
+            request,
+            "post_detail.html",
+            {
+                "product": product,
+                "reviews": reviews,
+                "reviewed": True,
+                "reviews_form": reviews_form,
+            },
+        )

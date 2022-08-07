@@ -106,8 +106,6 @@
 </div>
 </div>
 
-
-
 <!-- Product Reviews -->
 <div class="container-fluid">
     <hr class="mt-4 mr-4">
@@ -117,10 +115,11 @@
         <div class="col-12 col-lg-4">
             {% if user.is_authenticated %}
             <p class="mt-3 mr-4">Add Your Reviews:</p>
-            <div class="comment-area mr-4">
+            <div class="review-area mr-4">
                 <form action="POST">
-                    {{ review_form | crispy }}
+                    {{ reviews_form | crispy }}
                     {% csrf_token %}
+                    {{ form.as_p }}
                     <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">Submit</button>
                 </form>    
             </div>
