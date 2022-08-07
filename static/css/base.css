@@ -34,6 +34,11 @@ body {
     font-style:italic;
 }
 
+#review_p {
+    font-size: 12pt;
+}
+
+
 .footer {
     left: 0;
     bottom: 0;
@@ -131,6 +136,10 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
+.review-box{
+    
+    padding:5px;
+}
 /* ------------------------------- bootstrap toasts */
 .message-container {
     position: fixed;

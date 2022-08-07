@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from profiles.models import UserProfile
 
 class Category(models.Model):
     """
@@ -30,7 +32,13 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
+
     def __str__(self):
         return self.name
 
-    
+class Review(models.Model):
+    product_name = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+    user_name = models.CharField(max_length=254)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)    
