@@ -1,12 +1,13 @@
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404
 )
-from django.views import generic, View
+from django.views import View
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
 from django.db.models.functions import Lower
-from .forms import ReviewForm
+
+
 
 # Create your views here.
 def all_products(request):
@@ -58,46 +59,13 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
-class product_detail(View):
+def product_detail(request, product_id):
+    """ A view to show individual product details """
 
-    def get(self, request, *args, **kwargs):
-        product = get_object_or_404(Product, pk=product_id)
-        reviews = product.reviews
+    product = get_object_or_404(Product, pk=product_id)
 
-        return render(
-            request,
-            "product_detail.html",
-            {
-                "product": product,
-                "reviews": reviews,
-                "reviewed": False,
-                "reviews_form": ReviewForm()
-            },
-        )
+    context = {
+        'product': product,
+    }
 
-    def post(self, request, slug, *args, **kwargs):
-        """ A view to show individual product details """
-
-        product = get_object_or_404(Product, pk=product_id)
-        reviews = product.reviews
-
-        reviews_form = ReviewForm(data=request.POST)
-        if reviews_form.is_valid():
-            reviews_form.instance.email = request.user.email
-            reviews_form.instance.name = request.user.username
-            reviews = reviews_form.save(commit=False)
-            reviews.post = post
-            reviews.save()
-        else:
-            reviews_form = ReviewForm()
-
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "product": product,
-                "reviews": reviews,
-                "reviewed": True,
-                "reviews_form": reviews_form,
-            },
-        )
+    return render(request, 'products/product_detail.html', context)

@@ -35,7 +35,7 @@
                         {% include "shopping_cart/product-image.html" %}
                     </div>
                     <div class="col-12 col-sm-6 mb-2">
-                        {% include "shopping_cart/product-info.html" %}
+                       {% include "shopping_cart/product-info.html" %}</a>
                     </div>
                     <div class="col-12 col-sm-6 order-sm-last">
                         <p class="my-0">Price Each: ${{ item.product.price }}</p>
@@ -72,10 +72,10 @@
                     {% for item in shopping_cart_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            {% include "shopping_cart/product-image.html" %}
+                            <a href="{% url 'product_detail' item.product.id %}">{% include "shopping_cart/product-image.html" %}</a>
                         </td>
                         <td class="py-3">
-                            {% include "shopping_cart/product-info.html" %}
+                            <a href="{% url 'product_detail' item.product.id %}">{% include "shopping_cart/product-info.html" %}</a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price }}</p>
