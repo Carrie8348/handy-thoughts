@@ -1,13 +1,16 @@
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404
 )
+from django.views import  View
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from reviews.models import Reviews
 from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
+
 
 # Create your views here.
 def all_products(request):
@@ -63,12 +66,17 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-
+    reviews = Reviews.objects.all()
     context = {
         'product': product,
+        'reviews': reviews,
     }
 
+
+
     return render(request, 'products/product_detail.html', context)
+
+
 
 @login_required
 def add_product(request):
