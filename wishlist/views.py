@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
@@ -11,7 +11,9 @@ from profiles.models import UserProfile
 def view_wishlist(request):
     """ A view that renders the wishlist contents page """
 
-    return render(request, 'wishlist/wishlist.html')
+    products = Product.objects.filter(wishlist=request.user)
+
+    return render(request, 'wishlist/view_wishlist.html', {"wishlist": products})
 
 @login_required
 def add_to_wishlist(request, product_id):
@@ -22,5 +24,13 @@ def add_to_wishlist(request, product_id):
     else:
         product.wishlist.add(request.user)
         messages.success(request, "Added " + str(product.id) + " to your WishList")
-    return render(request, 'wishlist/wishlist.html',)  
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
+@login_required
+def remove_from_wishlist(request, product_id):
+    """ Delete a product from the wishlist """
+   
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted from wishlist!')
+    return redirect(reverse('view_wishlist'))
