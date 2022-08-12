@@ -52,9 +52,12 @@
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </small>
                 {% endif %}
-                <a href="{% url 'add_to_wishlist' product.id %}"><button type="button"
-                    class="btn btn-black rounded-0 text-uppercase mt-3">Add to Wishlist</button>
-                </a>
+                <br>
+                <div>
+                    <a href="{% url 'add_to_wishlist' product.id %}"><button type="button"
+                            class="btn btn-black rounded-0 text-uppercase mt-5">Add to Wishlist</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -112,13 +115,15 @@
     <hr>
     <div class="container mb-2 mt-5">
         <div class="container mb-2 mt-5">
-            <h2>Reviews</h2>
+            <h2 class="mb-0">Reviews</h2>
             <div>
                 {% if user.is_authenticated %}
-                <a href="{% url 'add_review' product.id %}"><button type="button"
-                        class="btn btn-black rounded-0 text-uppercase mt-3">Add review</button></a>
+                        <small>
+                            <a href="{% url 'add_review' product.id %}">
+                                Add Review<i class="fas fa-pen fa-lg"></i></a>                       
+                        </small>
                 {% else %}
-                <p>login in to add a review</p>
+                <p class="mb-0">login in to add a review</p>
                 <div>
                     <a class="btn btn-outline-black rounded-0 mt-3" href="{% url 'account_login' %}">Login</a>
                 </div>
@@ -127,27 +132,27 @@
         </div>
 
         <div class="row">
-            <div class="col-6 col-md-6 col-lg-8">
+            <div class="col-12">
                 {% for review in reviews %}
                 {% if review.product.id == product.id %}
-                <div class="col-12">
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <h6>{{review.title|striptags}}</h6>
+                <div class="col-12 mt-3">
+                        <div >
+                            <p class="mb-0">Title:  {{review.title|striptags}}</p>
+                            <p>reviewd by: <i>@{{review.posted_by|striptags}}</i></p>
                         </div>
+                        <hr>
                         <p class="ml-3 mt-3">{{review.body|striptags}}</p>
                         <div class="hr"></div>
-                        <p class="ml-3">reviewd by:{{review.posted_by|striptags}}</p>
+                        
                         {% if user == review.posted_by %}
                         <div class="container">
-                            <span><a href="{% url 'edit_review' review.id %}">
-                                    <button type="button" class="btn btn-black rounded-0 text-uppercase mt-3 mb-3">
-                                        Edit Review</button></a></span>
-                            <span><a href="{% url 'delete_review' review.id %}"><button type="button"
-                                        class="btn btn-outline-black rounded-0 mt-3 mb-3">Delete</button></a></span>
+                            <small>
+                                <a href="{% url 'edit_review' review.id %}">Edit Review</a> |
+                                <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                            </small>
                         </div>
                         {% endif %}
-                    </div>
+                    <br>
                 </div>
                 {% endif %}
                 {% endfor %}
