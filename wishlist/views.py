@@ -9,11 +9,12 @@ from profiles.models import UserProfile
 # Create your views here.
 @login_required
 def view_wishlist(request):
-    """ A view that renders the wishlist contents page """
+    """ A view that renders the files page """
 
     products = Product.objects.filter(wishlist=request.user)
 
     return render(request, 'wishlist/view_wishlist.html', {"wishlist": products})
+
 
 @login_required
 def add_to_wishlist(request, product_id):
