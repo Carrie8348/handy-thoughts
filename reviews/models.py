@@ -20,6 +20,9 @@ class Reviews(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+    
+    class Meta:
+        verbose_name_plural = 'Reviews'
 
     def __str__(self):
         return f"Comment {self.body} by {self.title}"

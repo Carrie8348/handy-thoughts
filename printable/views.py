@@ -3,7 +3,6 @@ from django.shortcuts import (
 )
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 from .models import File
 from .forms import FileForm
 
@@ -64,17 +63,17 @@ def edit_file(request, file_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=file_id)
+    file = get_object_or_404(File, pk=file_id)
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated file!')
-            return redirect(reverse('product_detail', args=[file.id]))
+            return redirect(reverse('file_detail', args=[file.id]))
         else:
             messages.error(request, 'Failed to update file. Please ensure the form is valid.')
     else:
-        form = ProductForm(instance=product)
+        form = FileForm(instance=product)
         messages.info(request, f'You are editing {file.title}')
 
     template = 'printable/edit_file.html'
@@ -87,7 +86,7 @@ def edit_file(request, file_id):
 
 @login_required
 def delete_file(request, file_id):
-    """ Delete a file from the store """
+    """ Delete a file from the database """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

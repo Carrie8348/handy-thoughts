@@ -4,6 +4,7 @@ from .models import File
 # Register your models here.
 class FileAdmin(admin.ModelAdmin):
     list_display = (
+        'title',
         'file',
         'author',
         'created_on'
