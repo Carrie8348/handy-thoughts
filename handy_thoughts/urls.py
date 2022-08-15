@@ -28,5 +28,5 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('reviews/', include('reviews.urls')),
     path('wishlist/', include('wishlist.urls')),
-    path('printable/', include('printable.urls')),
+    path('free_digital_journal/', include('free_digital_journal.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

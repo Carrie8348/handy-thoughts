@@ -15,7 +15,7 @@
     <div class="container mb-2 mt-5">
         <div class="row">
             <div class="col">
-                <h2 class="logo-font mb-4">Digital Journals</h2>
+                <h2 class="logo-font mb-4">Free Digital Journals</h2>
                 <hr>
             </div>
         </div>
@@ -23,27 +23,27 @@
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
-                    {% for file in files %}
+                    {% for free_download in free_downloads %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0">
-                            {% if file.image %}
-                            <a href="{% url 'file_detail' file.file_id  %}">
-                                <img class="card-img-top img-fluid" src="{{ file.image.url }}"
-                                    alt="{{ file.title }}">
+                            {% if free_download.image %}
+                            <a href="{% url 'free_download_detail' free_download.free_download_id  %}">
+                                <img class="card-img-top img-fluid" src="{{ free_download.image.url }}"
+                                    alt="{{ free_download.title }}">
                             </a>
                             {% else %}
-                            <a href="{% url 'file_detail' file.file_id  %}">
+                            <a href="{% url 'free_download_detail' free_download.free_download_id  %}">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                    alt="{{ file.title }}">
+                                    alt="{{ free_download.title }}">
                             </a>
                             {% endif %}
                             <div class="card-body pb-0">
-                                <p class="mb-0">{{ file.title }}</p>
+                                <p class="mb-0">{{ free_download.title }}</p>
                             </div>
                                         {% if request.user.is_superuser %}
                                         <small class="ml-3">
-                                            <a href="{% url 'edit_file' file.file_id %}">Edit File</a> |
-                                            <a class="text-danger" href="{% url 'delete_file' file.file_id %}">Delete File</a>
+                                            <a href="{% url 'edit_free_download' free_download.free_download_id %}">Edit File</a> |
+                                            <a class="text-danger" href="{% url 'delete_free_download' free_download.free_download_id %}">Delete File</a>
                                         </small>
                                         {% endif %}
                                     </div>

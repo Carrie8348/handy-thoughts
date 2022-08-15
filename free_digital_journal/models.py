@@ -1,10 +1,8 @@
-import uuid
 from django.db import models
 
-
 # Create your models here.
-class File(models.Model):
-    file_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False)
+class Free_Download(models.Model):
+    file_number = models.CharField(max_length=32, null=False, editable=False)
     title = models.CharField(max_length=200, unique=True)
     file = models.FileField(upload_to='file/')
     author = models.CharField(max_length=30)

@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import File
+from .models import Free_Download
 
 # Register your models here.
-class FileAdmin(admin.ModelAdmin):
+class FreeDownloadAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'file',
@@ -11,4 +11,4 @@ class FileAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(File, FileAdmin)
+admin.site.register(Free_Download, FreeDownloadAdmin)

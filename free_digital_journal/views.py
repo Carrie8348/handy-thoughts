@@ -3,53 +3,53 @@ from django.shortcuts import (
 )
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import File
-from .forms import FileForm
+from .models import Free_Download
+from .forms import FreeDownloadForm
 
 # Create your views here.
 
-def view_file(request):
+def all_free_downloads(request):
     """ A view to show all files """
 
-    files = File.objects.all()
+    free_downloads = Free_Download.objects.all()
     context = {
-            'files': files
+            'free_downloads': free_downloads
             
         }
 
-    return render(request, 'printable/view_file.html', context)
+    return render(request, 'free_digital_journal/all_free_downloads.html', context)
 
 
-def file_detail(request, file_id):
+def free_dowonlad_detail(request, file_id):
     """ A view to show individual file details """
 
-    file = get_object_or_404(File, pk=file_id)
+    free_download = get_object_or_404(Free_Download, pk=file_id)
 
     context = {
-        'file': file,
+        'free_download': free_download,
     }
 
-    return render(request, 'printable/file_detail.html', context)
+    return render(request, 'free_digital_journal/free_download_detail.html', context)
 
 @login_required
-def add_file(request):
+def add_free_download(request):
     """ Add a file to the database """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = FileForm(request.POST, request.FILES)
+        form = FreeDownloadForm(request.POST, request.FILES)
         if form.is_valid():
-            file = form.save()
+            free_download = form.save()
             messages.success(request, 'Successfully added file!')
-            return redirect(reverse('file_detail', args=[file.id]))
+            return redirect(reverse('free_download_detail', args=[free_download.id]))
         else:
             messages.error(request, 'Failed to add file. Please ensure the form is valid.')
     else:
-        form = FileForm()
+        form = FreeDownloadForm()
         
-    template = 'printable/add_file.html'
+    template = 'free_digital_journal/add_free_download.html'
     context = {
         'form': form,
     }
@@ -57,41 +57,41 @@ def add_file(request):
     return render(request, template, context)
 
 @login_required
-def edit_file(request, file_id):
+def edit_free_download(request, file_id):
     """ Edit a file in the database """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    file = get_object_or_404(File, pk=file_id)
+    free_download = get_object_or_404(Free_Download, pk=free_download_id)
     if request.method == 'POST':
-        form = FileForm(request.POST, request.FILES, instance=product)
+        form = FreeDownloadForm(request.POST, request.FILES, instance=free_download)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated file!')
-            return redirect(reverse('file_detail', args=[file.id]))
+            return redirect(reverse('free_download_detail', args=[free_download_id]))
         else:
             messages.error(request, 'Failed to update file. Please ensure the form is valid.')
     else:
-        form = FileForm(instance=product)
-        messages.info(request, f'You are editing {file.title}')
+        form = FreeDownloadForm(instance=free_download)
+        messages.info(request, f'You are editing {free_download.title}')
 
-    template = 'printable/edit_file.html'
+    template = 'free_digital_journal/edit_free_download.html'
     context = {
         'form': form,
-        'file': file,
+        'free_download': free_download,
     }
 
     return render(request, template, context)
 
 @login_required
-def delete_file(request, file_id):
+def delete_free_download(request, free_download_id):
     """ Delete a file from the database """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
         
-    file = get_object_or_404(File, pk=file_id)
-    file.delete()
+    free_download = get_object_or_404(Free_Download, pk=free_download_id)
+    free_download.delete()
     messages.success(request, 'File deleted!')
-    return redirect(reverse('view_file'))
+    return redirect(reverse('free_download_detail'))
