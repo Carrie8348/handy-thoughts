@@ -63,7 +63,7 @@
         </a>
       </div>
       <!-- search bar -->
-      <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 ">
+      <div class="col-12 col-lg-5 my-auto py-1 py-lg-0 ">
         <form method="GET" action="{% url 'products' %}">
           <div class="input-group w-100">
             <input class="form-control border border-black rounded-0" type="text" name="q"
@@ -79,7 +79,7 @@
         </form>
       </div>
       <!--account wishlist, & shopping cart -->
-      <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 ">
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="list-inline-item dropdown">
             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -93,7 +93,6 @@
               {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
               <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-              <a href="{% url 'add_free_download' %}" class="dropdown-item">File Management</a>
               {% endif %}
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -102,6 +101,15 @@
               <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
               {% endif %}
             </div>
+          </li>
+
+          <li class="list-inline-item">
+            <a class="text-black nav-link" href="{% url 'contact' %}">
+              <div class="text-center">
+                <div><i class="fas fa-envelope fa-lg"></i></div>
+                <p class="my-0">Conact Us</p>
+              </div>
+            </a>
           </li>
 
           <li class="list-inline-item">
