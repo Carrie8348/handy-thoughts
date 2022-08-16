@@ -20,11 +20,11 @@ def view_wishlist(request):
 @login_required
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    #if product.wishlist.filter(id=request.user.id).exists():
-     #   product.wishlist.remove(request.user)
-      #  messages.success(request, product.name + " has been removed from your WishList")
-    #else:
-    product.wishlist.add(request.user)
-    messages.success(request, "Added " + str(product.id) + " to your WishList")
+    if product.wishlist.filter(id=request.user.id).exists():
+        product.wishlist.remove(request.user)
+        messages.success(request, product.name + " has been removed from your WishList")
+    else:
+        product.wishlist.add(request.user)
+        messages.success(request, "Added " + str(product.id) + " to your WishList")
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
