@@ -38,6 +38,10 @@ body {
     font-size: 12pt;
 }
 
+#contact-form-btn {
+    margin-left: 85px;
+}
+
 
 .footer {
     left: 0;
