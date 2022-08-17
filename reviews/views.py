@@ -11,10 +11,6 @@ def add_review(request, product_id):
     """
     view to add reviews to the database
     """
-    # checks if user has permition to add products
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only site admin can do that.')
-        return redirect(reverse('products'))
 
     if request.method == 'POST':
     
@@ -52,12 +48,6 @@ def edit_review(request, review_id):
 
     review = get_object_or_404(Reviews, pk=review_id)
 
-    # checks if user has permition to add products
-    if request.user != review.posted_by:
-        messages.error(request, 'Sorry, only the user the created this review can do that.')
-        return redirect(reverse('products'))
-    review = get_object_or_404(Reviews, pk=review_id)
-
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
@@ -87,9 +77,6 @@ def edit_review(request, review_id):
 @login_required
 def delete_review(request, review_id):
     """ Delete a blog from the store """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store admin can do that.')
-        return redirect(reverse('products'))
 
     review = get_object_or_404(Reviews, pk=review_id)
     review.delete()

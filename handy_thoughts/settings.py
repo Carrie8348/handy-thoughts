@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+#import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'reviews',
-    'wishlist',
     'contact',
     # Other
     'crispy_forms',
@@ -122,17 +122,21 @@ WSGI_APPLICATION = 'handy_thoughts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#if 'DATABASE_URL' in os.environ:
+ #   DATABASES = {
+  #      'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+   # }
+#else:
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
+#DATABASES = {
+    #'default': dj_database_url.parse('postgres://bqeenpczhqidgu:50cebdf1e47dea8d4143ef74d6d4914cb91086c3112c124c1189312d4427aa6b@ec2-52-49-120-150.eu-west-1.compute.amazonaws.com:5432/dhhp6o0ruk91i')
+#}
 
 
 # Password validation

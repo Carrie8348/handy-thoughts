@@ -1,7 +1,5 @@
 from django.db import models
-from django.conf import settings
-from django.contrib.auth.models import User
-from profiles.models import UserProfile
+
 
 class Category(models.Model):
     """
@@ -32,7 +30,6 @@ class Product(models.Model):
     description = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    wishlist = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="wishlist", blank=True)
 
 
     def __str__(self):

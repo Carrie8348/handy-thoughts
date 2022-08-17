@@ -52,14 +52,6 @@
     </a>
   </li>
 <li class="list-inline-item">
-    <a class="text-black nav-link d-block d-lg-none" href="{% url 'view_wishlist' %}">
-        <div class="text-center">
-            <div><i class="fas fa-heart fa-lg"></i></div>
-            <p class="my-0">Wishlist</p>
-        </div>
-    </a>
-</li>
-<li class="list-inline-item">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} 
         nav-link d-block d-lg-none" href="{% url 'view_shopping_cart' %}">
         <div class="text-center">
