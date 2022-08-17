@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -22,28 +21,10 @@
         </div>
 
         <div class="row">
-            <form role="form" id="contact-form" class="contact-form">
+            <form  method="POST" role="form" id="contact-form" class="contact-form">
+                {% csrf_token %}
+                {{ form | crispy }}
                         <div class="row">
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Name">
-                              </div>
-                          </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
-                              </div>
-                          </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                              <div class="form-group">
-                                <textarea class="form-control textarea" rows="3" name="Message" id="Message" placeholder="Message"></textarea>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                        <div class="col-md-12">
                       <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">Send a message</button>
                       </div>
                       </div>

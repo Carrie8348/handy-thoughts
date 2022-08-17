@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from .forms import ContactForm
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .models import Contact
+from .forms import ContactForm
 
 def contact_view(request):
     if request.method == 'POST':
