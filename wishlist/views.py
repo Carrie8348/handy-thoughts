@@ -1,29 +1,56 @@
-from django.shortcuts import (render, redirect, reverse, HttpResponse, 
-                            get_object_or_404, HttpResponseRedirect)
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+
 from django.contrib import messages
-from django.conf import settings
+
 from products.models import Product
-from profiles.models import UserProfile
+from .models import WishList
 
 
-# Create your views here.
 @login_required
-def view_wishlist(request):
-    """ A view that renders the files page """
+def wishlist(request):
+    """
+    A view to render the user's wishlist
+    """
+    wishlist = None
+    try:
+        wishlist = WishList.objects.get(user=request.user)
+    except WishList.DoesNotExist:
+        pass
 
-    products = Product.objects.filter(wishlist=request.user)
+    context = {
+        'wishlist': wishlist,
+    }
 
-    return render(request, 'wishlist/view_wishlist.html', {"wishlist": products})
+    return render(request, 'wishlist/wishlist.html', context)
 
 
 @login_required
 def add_to_wishlist(request, product_id):
+    """
+    For login-user to add item in the wishlist
+    """
     product = get_object_or_404(Product, pk=product_id)
-    if product.wishlist.filter(id=request.user.id).exists():
-        product.wishlist.remove(request.user)
-        messages.success(request, product.name + " has been removed from your WishList")
-    else:
-        product.wishlist.add(request.user)
-        messages.success(request, "Added " + str(product.id) + " to your WishList")
-    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+
+    # Create a wishlist for the user if they don't have one
+    wishlist, _ = WishList.objects.get_or_create(user=request.user)
+    # Add product to the wishlist
+    wishlist.products.add(product)
+    messages.info(request, "A new product was added to your wishlist")
+
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    """
+    For login-user to remove item from the wishlist
+    """
+    wishlist = WishList.objects.get(user=request.user)
+    product = get_object_or_404(Product, pk=product_id)
+
+    # Remove product from the wishlist
+    wishlist.products.remove(product)
+    messages.info(request, "A product was removed from your wishlist")
+
+    return redirect(request.META.get('HTTP_REFERER'))
