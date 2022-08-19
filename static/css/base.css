@@ -49,6 +49,13 @@ body {
     width: 100%;
   }
 
+  #mc_embed_signup {
+    display: block;
+    position: relative;
+    text-align: left;
+    padding: 0 !important;
+  }
+
 
 /* from Bulma */
 .icon {
