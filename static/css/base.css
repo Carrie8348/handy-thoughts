@@ -49,6 +49,15 @@ body {
     width: 100%;
   }
 
+  #mc_embed_signup{
+    clear:left; 
+    font:14px;  
+    width:350px;}
+
+#explanation {
+    font-size: 5pt;
+}
+
 
 /* from Bulma */
 .icon {
