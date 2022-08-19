@@ -86,10 +86,8 @@
                                 value="Add to Cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        <div class="col{% if s %}-12 mt-2{% endif %}"></div>
                         {% if request.user.is_authenticated %}
-                        <a class="btn btn-black rounded-0 text-uppercase mt-5"
-                            href="{% url 'add_to_wishlist' product.id %}">
+                        <a  href="{% url 'add_to_wishlist' product.id %}">
                             Add to wishlist<i class="fas fa-heart-right"></i></a>
                         {% endif %}
                     </div>
