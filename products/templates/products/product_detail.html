@@ -39,6 +39,10 @@
                     </a>
                 </p>
                 {% endif %}
+                {% if request.user.is_authenticated %}
+                        <a  href="{% url 'add_to_wishlist' product.id %}">
+                            Add to wishlist<i class="fas fa-heart-right"></i></a>
+                        {% endif %}
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
                     <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -86,10 +90,6 @@
                                 value="Add to Cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        {% if request.user.is_authenticated %}
-                        <a  href="{% url 'add_to_wishlist' product.id %}">
-                            Add to wishlist<i class="fas fa-heart-right"></i></a>
-                        {% endif %}
                     </div>
                 </form>
             </div>
