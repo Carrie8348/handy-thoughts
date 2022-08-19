@@ -178,12 +178,6 @@
   {% block content %}
   {% endblock %}
 
-  {% block postloadjs %}
-  <script type="text/javascript">
-    $('.toast').toast('show');
-  </script>
-  {% endblock %}
-
   <footer class="text-center text-white" style="background-color: #fff;">
     <!-- Grid container -->
     <div class="container pt-4">
@@ -235,41 +229,27 @@
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         </form>
       </div>
-      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-      <script type='text/javascript'>
-        (function ($) {
-          window.fnames = new Array();
-          window.ftypes = new Array();
-          fnames[0] = 'EMAIL';
-          ftypes[0] = 'email';
-          fnames[1] = 'FNAME';
-          ftypes[1] = 'text';
-          fnames[2] = 'LNAME';
-          ftypes[2] = 'text';
-          fnames[3] = 'ADDRESS';
-          ftypes[3] = 'address';
-          fnames[4] = 'PHONE';
-          ftypes[4] = 'phone';
-          fnames[5] = 'BIRTHDAY';
-          ftypes[5] = 'birthday';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-      </script>
       <!--End mc_embed_signup-->
     </div>
     <!-- Copyright -->
     <div class="text-center text-dark p-3">
       © 2022 Copyright:
       <a class="text-dark" href="#">
-        HandyThoughts | Carrie Qian 
+        HandyThoughts | Carrie Qian
         <br>
-        This project is made for educational purposes only. 
+        This project is made for educational purposes only.
         No commercial revenue is generated from the project.</a>
     </div>
     <!-- Copyright -->
   </footer>
-  <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-  <script>
+
+  {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
+
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script type='text/javascript'>
     (function ($) {
       window.fnames = new Array();
       window.ftypes = new Array();
@@ -288,7 +268,7 @@
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
   </script>
-</body>
+  {% endblock %}
 
 </body>
 
