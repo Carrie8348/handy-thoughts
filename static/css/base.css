@@ -52,7 +52,7 @@ body {
   #mc_embed_signup {
     color: #555;
     display: block;
-    position: relative;
+    position: fixed;
     text-align: left;
     padding: 0 !important;
   }
