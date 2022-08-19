@@ -50,6 +50,11 @@ body {
     width: 100%;
   }
 
+#mc_embed_signup{
+    clear:left; 
+    font:14px;  
+    width:500px;
+}
 
 #explanation {
     font-size: 0.5pt;
