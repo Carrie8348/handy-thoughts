@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
 
   {% endblock %}
 
@@ -207,48 +208,63 @@
       <!-- Section: Social media -->
     </div>
     <!-- Grid container -->
-<br>
-    <div class="container">
+    <br>
 
-      <!-- Begin Mailchimp Signup Form -->
-      <div class="col-12 col-lg-6">
-        <div>
-          <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-          <div id="mc_embed_signup">
-            <form
-              action="https://hotmail.us12.list-manage.com/subscribe/post?u=1d8456b9100b50bc24405fbcb&amp;id=152056b14d&amp;f_id=0082b5e0f0" method="post"
-              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-              target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
-                <h4  class="my-0">Sign up for our Newsletter!</h4>
-                <div class="mc-field-group">
-                  <input type="email" placeholder="Enter email" value="" name="EMAIL" class="required email input-sm" id="mce-EMAIL">
-                </div>
-                <div id="mce-responses" class="clear foot">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; center;" aria-hidden="true"><input type="text"
-                    name="b_a4858a5f02214e93d1d36f158_752255577b" tabindex="-1" value=""></div>
-                <div class="optionalParent">
-                  <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" class="btn btn-black rounded-0 text-uppercase mt-5">
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          
-        </div>
-        
+    <!-- Begin Mailchimp Signup Form -->
+    <div class="container pt-4">
+
+
+      <div id="mc_embed_signup">
+        <form
+          action="https://hotmail.us12.list-manage.com/subscribe/post?u=1d8456b9100b50bc24405fbcb&amp;id=152056b14d&amp;f_id=0082b5e0f0"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+          target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <h2 class="my-0">Subscribe</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+              </label>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+              <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        </form>
       </div>
+      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+      <script type='text/javascript'>
+        (function ($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[0] = 'EMAIL';
+          ftypes[0] = 'email';
+          fnames[1] = 'FNAME';
+          ftypes[1] = 'text';
+          fnames[2] = 'LNAME';
+          ftypes[2] = 'text';
+          fnames[3] = 'ADDRESS';
+          ftypes[3] = 'address';
+          fnames[4] = 'PHONE';
+          ftypes[4] = 'phone';
+          fnames[5] = 'BIRTHDAY';
+          ftypes[5] = 'birthday';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+      </script>
+      <!--End mc_embed_signup-->
     </div>
-
     <!-- Copyright -->
     <div class="text-center text-dark p-3">
       © 2022 Copyright:
-      <a class="text-dark" href="#">HandyThoughts.com</a>
+      <a class="text-dark" href="#">
+        HandyThoughts | Carrie Qian 
+        <br>
+        This project is made for educational purposes only. 
+        No commercial revenue is generated from the project.</a>
     </div>
     <!-- Copyright -->
   </footer>
