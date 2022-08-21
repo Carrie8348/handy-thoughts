@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="container mb-2 mt-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font mb-4">Shipping Policy</h2>
+                <hr>
+            </div>
+        </div>
+        <div>
+            <h3>How long does it take to process an order?</h3>
+            <p>Please allow 1-2 days for your order to be processed for shipping.
+                We make every effort to fulfill orders as quickly as possible.
+            </p>
+        </div>
+
+        <h3>International Shipping</h3>
+        <p>Free shipping over $50. If you are not reached the free shipping rate,
+            you will get a 10% shipping fee of the product you ordered.
+        </p>
+
+        <h3>Return</h3>
+        <p>You have 30 days to return the product for free.
+        </p>
+    </div>
+</div>
+
+    {% endblock %}
