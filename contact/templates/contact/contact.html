@@ -20,14 +20,16 @@
             </div>
         </div>
 
-        <div class="row text-center">
-            <form  method="POST" role="form" id="contact-form" class="contact-form">
+
+        <div class="row" id="contact_form">
+            <form method="POST" role="form" id="contact-form" class="contact-form">
                 {% csrf_token %}
                 {{ form | crispy }}
-                        <div class="row" id="contact-form-btn">
-                      <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">Send a message</button>
-                      </div>
-                      </div>
-                    </form>
+                <div class="row" id="contact-form-btn">
+                    <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">
+                        Send a message</button>
+                </div>
         </div>
-{% endblock %}
+        </form>
+    </div>
+    {% endblock %}

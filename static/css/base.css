@@ -42,6 +42,14 @@ body {
     margin-left: 85px;
 }
 
+#contact-form {
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
 
 .footer {
     color: black;
@@ -50,12 +58,25 @@ body {
     bottom: 0;
     width: 100%;
   }
-
+/* ------------------------------- mailchimp settings */
 #mc_embed_signup{
     background:#fff; 
     clear:both; 
     font:14px Helvetica,Arial,sans-serif;  
-    width:600px;
+    width:350px;
+}
+
+#mc_embed_signup #mc_embed_signup_scroll{
+	text-align: center;
+}
+
+#mc_embed_signup #mc_embed_signup_scroll .clear {
+	display: inline;
+}
+
+#mc_embed_signup #mc_embed_signup_scroll .button {
+	height: 47px !important;
+	padding: 20px 55px !important;
 }
 
 #explanation {
