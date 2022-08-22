@@ -8,6 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Handy Thoughts, provide greate journals to paper lovers">
+  <meta name="keywords" content="journals, planners, bullet, diary, notebook, stationery, paper">
   {% endblock %}
 
   {% block extra_meta %}
@@ -20,8 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
-
   {% endblock %}
 
   {% block extra_css %}
@@ -181,8 +181,9 @@
   <footer class="bg-white text-center container-fluid text-dark mt-5">
     <!-- Grid container -->
     <div class="container p-4">
-      <!-- Section: Social media -->
-      <section class="mb-4">
+      <!-- Social media -->
+      <div class="mb-4">
+       
         <!-- Facebook -->
         <a class="btn btn-outline-light btn-floating m-1 text-dark"
           href="https://www.facebook.com/Handy-Thoughts-112475291573886!" target="_blank" rel="nofollow"
@@ -198,7 +199,7 @@
           href="https://www.linkedin.com/in/yilu-qian-carrie-qian-8a940618/" target="_blank" rel="nofollow"
           aria-label="Connect with us on Linkedin (opens in new tab)" role="button">
           <i class="fab fa-linkedin-in"></i></a>
-        </section>
+        </div>
 
         <!-- Section: Social media -->
 
@@ -237,7 +238,7 @@
         <!--End mc_embed_signup-->
         <!--Grid column-->
 
-        <!-- Section: Links -->
+        <!-- Links -->
         <div class="container pt-4 text-dark">
           <section class="mb-4">
             <!-- About Us -->
@@ -246,7 +247,7 @@
 
             <!-- Shipping -->
             <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="{% url 'shipping' %}">Shipping Policy</a>
-            <!-- Section: Links -->
+            <!-- Links -->
         </div>
         <!-- Grid container -->
 
@@ -265,7 +266,7 @@
   <!-- Footer -->
 
   {% block postloadjs %}
-  <script type="text/javascript">
+  <script>
     $('.toast').toast('show');
   </script>
   {% endblock %}
