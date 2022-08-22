@@ -51,7 +51,7 @@
   <header class=" container-fluid fixed-top">
     <!--free delivery banner at the top of the page-->
     <div class="row bg-dark text-center">
-      <div id="delivery banner" class="col text-white">
+      <div id="delivery-banner" class="col text-white">
         <h6 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h6>
       </div>
     </div>
@@ -83,8 +83,7 @@
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
+            <a class="text-black nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
                 <p class="my-0">Account</p>
@@ -199,11 +198,12 @@
           href="https://www.linkedin.com/in/yilu-qian-carrie-qian-8a940618/" target="_blank" rel="nofollow"
           aria-label="Connect with us on Linkedin (opens in new tab)" role="button">
           <i class="fab fa-linkedin-in"></i></a>
+        </section>
 
         <!-- Section: Social media -->
 
-        <!-- Section: Form -->
         <!-- Begin Mailchimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
         <div id="mc_embed_signup">
           <form
             action="https://herokuapp.us14.list-manage.com/subscribe/post?u=71c28c49ef5263df47a318408&amp;id=d3119fbcea&amp;f_id=008af3e0f0"
@@ -223,12 +223,11 @@
                 <div class="response" id="mce-success-response" style="display:none"></div>
               </div>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_71c28c49ef5263df47a318408_d3119fbcea" tabindex="-1" value=""></div>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                  name="b_71c28c49ef5263df47a318408_d3119fbcea" tabindex="-1" value=""></div>
               <div class="optionalParent">
                 <div class="clear foot">
                   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-
                 </div>
               </div>
             </div>
@@ -246,8 +245,7 @@
               aria-label="About Handy THoughts" role="button">About Us</a>
 
             <!-- Shipping -->
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="{% url 'shipping' %}"
-              role="button ">Shipping Policy</a>
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="{% url 'shipping' %}">Shipping Policy</a>
             <!-- Section: Links -->
         </div>
         <!-- Grid container -->
@@ -262,6 +260,7 @@
             No commercial revenue is generated from the project.</p>
         </div>
         <!-- Copyright -->
+    </div>
   </footer>
   <!-- Footer -->
 
