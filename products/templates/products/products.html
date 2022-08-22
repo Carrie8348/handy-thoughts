@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -56,7 +55,8 @@
                                         {% if request.user.is_superuser %}
                                         <small class="ml-3">
                                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            <a class="text-danger"
+                                                href="{% url 'delete_product' product.id %}">Delete</a>
                                         </small>
                                         {% endif %}
                                     </div>
@@ -89,9 +89,11 @@
             </div>
         </div>
     </div>
+
     <div class="btt-button shadow-sm rounded-0 border border-black">
         <a class="btt-link d-flex h-100">
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}

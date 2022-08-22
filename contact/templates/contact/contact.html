@@ -19,17 +19,20 @@
                 <hr>
             </div>
         </div>
-
-
-        <div class="col-12 col-lg-4" >
-            <form method="POST" role="form" id="contact-form">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <div class="row" id="contact-form-btn">
-                    <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">
-                        Send a message</button>
-                </div>
-        </div>
-        </form>
     </div>
-    {% endblock %}
+</div>
+
+
+<div class="col-12 col-lg-4">
+    <form method="POST" id="contact-form">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="row" id="contact-form-btn">
+            <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">
+                Send a message</button>
+        </div>
+    </form>
+</div>
+
+</div>
+{% endblock %}
