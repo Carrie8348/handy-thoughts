@@ -36,19 +36,16 @@
         </a>
         {% endif %}
         <div class="card-body pb-0">
-              <a href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>
-              {% endif %}
-            </div>
-          </div>
+          <a href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>
         </div>
       </div>
     </div>
   </div>
-
-  {% endfor %}
-  {% else %}
-  <p class="card-text">No products have been added to your wishlist yet</p>
-  {% endif %}
-
 </div>
+</div>
+{% endif %}
+{% endfor %}
+{% else %}
+<p class="card-text">No products have been added to your wishlist yet</p>
+
 {% endblock %}
