@@ -48,6 +48,10 @@
                   <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                 </a>
               </p>
+              <a class="btn btn-black rounded-0 text-uppercase mt-5" 
+                href="{% url 'remove_from_wishlist' product.id %}">
+                <span class="text-uppercase font-weight-bold">Remove from wishlist</span>
+              </a>
               {% endif %}
             </div>
           </div>
