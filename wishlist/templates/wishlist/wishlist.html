@@ -9,43 +9,61 @@
 </div>
 {% endblock %}
 
-{% block content %}
-<div class="overlay"></div>
-<div class="container mb-2 mt-5">
+<!-- User WishList Page -->
+<div class="container-fluid large-container">
   <div class="row">
-    <div class="col">
-      <h2 class="logo-font mb-4">Your Wishlist</h2>
-      <hr>
-    </div>
-  </div>
-
-  {% if wishlist %}
-  {% for product in wishlist.products.all  %}
-
-  <div class="row">
-    <div class="product-container col-10 offset-0">
-      <div class="row mt-1 mb-2"></div>
-      <div class="row">
+          <div class="col text-center mt-3">
+              <h1 class="font-weight-bold text-uppercase">Your Wish List</h1>
+              <hr class="w-50 mb-5">
+          </div>
+      </div>
+<!-- User WishList Items -->
+{% for product in wishlist.products.all %}
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="image-container mt-5">
         {% if product.image %}
-        <a href="{% url 'product_detail' product.id %}">
-          <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-        </a>
+          <a href="{% url 'product_detail' product.id %}">
+            <img class="card-img-top" src="{{ product.image.url }}" alt=" {{ product.name }}">
+          </a>
         {% else %}
-        <a href="{% url 'product_detail' product.id %}">
-          <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-        </a>
+          <a href="{% url 'product_detail' product.id %}">
+            <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png " alt=" {{ product.name }}">
+          </a>
         {% endif %}
-        <div class="card-body pb-0">
-          <a href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>
-        </div>
       </div>
     </div>
-  </div>
-
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="products-detail-container my-5">
+        <h3 class="mb-4 pt-md-5 text-black font-weight-bold"> {{ product.name }}</h3>
+        <h4 class="text-black lead mb-2 text-left font-weight-bold">£{{ product.price }}</h4>
+        {% if product.category %}
+        <p class="small">
+          <a class="text-muted text-black font-weight-bold"
+            href="{% url 'products' %}?category={{ product.category.name }}">
+            <i class="fas fa-hashtag"></i> {{ product.category.friendly_name }}
+          </a>
+        </p>
+        {% endif %}
+      </div>
+      <!-- Buttons -->
+      <div class="text-center">
+        <a class="btn btn-info btn-width mt-3" href="{% url 'product_detail' product.id %}">
+          <span class="text-uppercase font-weight-bold">Product Details</span>
+        </a>
+        <a class="btn btn-black rounded-0 text-uppercase mt-5" href="{% url 'remove_from_wishlist' product.id %}">
+          <span class="text-uppercase font-weight-bold">Remove from wishlist</span>
+        </a>
+      </div>
+    </div>
+  </div>		
 {% empty %}
-<div class="row justify-content-center">
-  <p class="card-text">No products have been added to your wishlist yet</p>
+  <div class="row justify-content-center">
+    <!-- Wishlist Page "if" empty -->
+    <div class="text-center mt-3">
+      <h4 class="font-weight-bold text-uppercase">Your Wishlist is Empty</h4>
+    </div>
+  </div>
+{% endfor %}	
 </div>
-{% endfor %}
-
 {% endblock %}
