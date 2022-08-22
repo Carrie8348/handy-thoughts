@@ -22,16 +22,17 @@
     </div>
 </div>
 
-
-<div class="row overlay-white p-2">
-    <form method="POST" id="contact-form">
-        {% csrf_token %}
-        {{ form | crispy }}
-        <div class="row" id="contact-form-btn">
-            <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">
-                Send a message</button>
-        </div>
-    </form>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <form method="POST" id="contact-form">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <div class="row" id="contact-form-btn">
+                <button type="submit" class="btn btn-black rounded-0 text-uppercase mt-3">
+                    Send a message</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 
