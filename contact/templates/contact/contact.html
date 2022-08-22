@@ -22,7 +22,7 @@
 
 
         <div class="col-12 col-lg-4" >
-            <form method="POST" role="form" id="contact-form" class="contact-form">
+            <form method="POST" role="form" id="contact-form">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="row" id="contact-form-btn">
