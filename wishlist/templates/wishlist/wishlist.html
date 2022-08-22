@@ -37,11 +37,11 @@
     </div>
     <div class="col-12 col-md-6 col-lg-4">
       <div class="products-detail-container my-5">
-        <h3 class="mb-4 pt-md-5 text-black font-weight-bold"> {{ product.name }}</h3>
-        <h4 class="text-black lead mb-2 text-left font-weight-bold">£{{ product.price }}</h4>
+        <h3 class="mb-4 pt-md-5 text-muted font-weight-bold"> {{ product.name }}</h3>
+        <h4 class="text-muted">£{{ product.price }}</h4>
         {% if product.category %}
         <p class="small">
-          <a class="text-muted text-black font-weight-bold"
+          <a class="text-muted text-muted font-weight-bold"
             href="{% url 'products' %}?category={{ product.category.name }}">
             <i class="fas fa-hashtag"></i> {{ product.category.friendly_name }}
           </a>
