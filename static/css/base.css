@@ -4,7 +4,7 @@ html {
 
 body {
     background: url('/media/background.jpeg') no-repeat center center fixed;
-    background-color: F8F9FA;
+    background-color: #F8F9FA;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #000;
