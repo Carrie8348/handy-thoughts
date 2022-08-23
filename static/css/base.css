@@ -58,6 +58,16 @@ body {
     width: 300px;
   }
 
+#mc_embed_signup input.email {
+    width: 100%;
+}
+
+#mc_embed_signup form {
+    width: 58%;   
+    margin: auto; 
+}
+
+
 #explanation {
     font-size: 0.2pt;
 }
