@@ -58,11 +58,11 @@ body {
     width: 300px;
   }
 
-#mc_embed_signup input.email {
+#mce-EMAIL{
     width: 100%;
 }
 
-#mc_embed_signup form {
+#mc-embedded-subscribe-form{
     width: 58%;   
     margin: auto; 
 }
