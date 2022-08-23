@@ -53,15 +53,10 @@ body {
 /* ------------------------------- mailchimp settings */
 #mc_embed_signup {
     background: #fff;
-    clear: left;
+    display: inline-block;
     font: 14px Helvetica, Arial, sans-serif;
     width: 300px;
   }
-
-#mce-EMAIL{
-    display: inline-block;     
-    padding: 12px;
-}
 
 
 #explanation {
