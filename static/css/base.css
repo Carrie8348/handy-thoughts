@@ -59,12 +59,8 @@ body {
   }
 
 #mce-EMAIL{
-    width: 100%;
-}
-
-#mc-embedded-subscribe-form{
-    width: 58%;   
-    margin: auto; 
+    display: inline-block;     
+    padding: 12px;
 }
 
 
