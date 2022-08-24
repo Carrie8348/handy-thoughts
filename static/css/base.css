@@ -314,6 +314,6 @@ a.category-badge > span.badge:hover {
     padding: .25rem .5rem !important;
 }
 
-#newsletter-box {
-    max-width: 50%;
+.d-inline-flex {
+    max-width: 60%;
 }
