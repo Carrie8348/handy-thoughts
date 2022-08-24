@@ -315,5 +315,6 @@ a.category-badge > span.badge:hover {
 }
 
 .d-inline-flex {
-    max-width: 60%;
+    display: inline-flex!important;
+    max-width: 80%;
 }
