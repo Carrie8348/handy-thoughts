@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://handythoughtsshop.herokuapp.com/sitemap.xml
