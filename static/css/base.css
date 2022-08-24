@@ -57,9 +57,6 @@ body {
     width: 500px;
 }
 
-.d-inline-flex {
-    max-width: 500px; 
-}
 
 
 #explanation {
@@ -319,7 +316,6 @@ a.category-badge > span.badge:hover {
     padding: .25rem .5rem !important;
 }
 
-.d-inline-flex {
-    display: inline-flex !important;
-    max-width: 80%;
+#mc_embed_signup  {
+    width: 75%;
 }
