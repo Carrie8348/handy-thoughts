@@ -54,6 +54,11 @@ body {
 #mc_embed_signup  {
     background:#fff; 
     font:14px ;
+    width: 500px;
+}
+
+.d-inline-flex {
+    max-width: 500px; 
 }
 
 
@@ -315,6 +320,6 @@ a.category-badge > span.badge:hover {
 }
 
 .d-inline-flex {
-    display: inline-flex!important;
+    display: inline-flex !important;
     max-width: 80%;
 }
