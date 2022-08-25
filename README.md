@@ -114,8 +114,6 @@ Each page features contact icon.
 - Contact icon on small screen.
 ![image](documentations/pics/contact-icon-on-small%20screen.png)
 
-
-
 #### Wishlist icon
 
 The wishlist icon only shows when the user logged in.
@@ -129,7 +127,6 @@ The wishlist icon only shows when the user logged in.
 - Wishlist icon on small screen
 ![image](documentations/pics/wishlist-icon-on-small-screen.png)
 
-
 #### The Shopping Cart Icon
 
 When the user adds a product to the shopping cart icon on the right top corner, the total amount of the products will be shown on the top bar. On small screens, there won't be number showing, but the icon will turn blue means it's not empty. 
@@ -140,8 +137,6 @@ When the user adds a product to the shopping cart icon on the right top corner, 
 ![image](documentations/pics/shopping-cart-icon-small-screen.png)
 - The shopping cart icon turns blue on small screen when the cart isn't empty
 ![image](documentations/pics/shopping-cart-icon-turn-blue-small-screen.png)
-
-
 
 #### The Free Delivery Banner
 
@@ -180,7 +175,6 @@ Each page features a footer on the bottom, with our social media link displayed.
 
 <img src="documentations/pics/footer-on-small-screen.png" width="200">
 
-
 #### Home Page
 
 Only the home page features a background picture (I take a picture of my journal) in the middle of the page, with a "SHOP NOW" button to navigate to the product page. It is "overlayed" on all other pages, covered in white. The purpose of the home page background picture is to grab attention and give a positive emotional response to the user.
@@ -203,7 +197,6 @@ Users can click on a specific product to view its detail of the product.
 
 <img src="documentations/pics/all-products-mobile.png" width="200">
 
-
 #### Product Detail Page
 
 This page shows specific product information to the user, with a product picture, price, brand, categories, and descriptions. Only the superuser can see two links for editing and deleting products on the page. The superuser can change the file if needed without operating it on the admin panel. Users can click the button on the page to add a product to the wishlist, update the quantity of the wanting product, click "add to cart," or click "keep shopping" to go back to all products and choose other products. Users can also click the "Add Review" button to add a review to the specific product.
@@ -213,7 +206,6 @@ This page shows specific product information to the user, with a product picture
 - Product Detail Page on small screen
 
 <img src="documentations/pics/product-detail-small-screen.png" width="200">
-
 
 #### Profile Page
 
@@ -239,7 +231,6 @@ In the admin panel, the super user/site owner can see the content of the message
 - Contact Page on small screen
 
 <img src="documentations/pics/contact-small-screen.png" width="200">
-
 
 #### Shopping Cart Page
 
@@ -334,6 +325,10 @@ This page is a simple bootstrap template with two buttons for user to either "ca
 - Sign Out on small screen
 
 <img src="documentations/pics/sign-out-page-on-small-screen.png" width="200">
+
+#### Product Review Page
+
+#### Product Management Page
 
 #### Toast
 This project features Toast to show the message on the top right corner when user interating with the site. It appears both on big and small screens.
@@ -521,7 +516,7 @@ On the footer, there is a sign-up form embedded from Mailchimp. It is an excelle
 
 ## Testing
 Testing information can be found in separate TESTING—MD file.
-[The Testing.md File is here](https://github.com/Carrie8348/handy-thoughts/blob/main/documentations/pdfs/Manual%20Testing%20doc.pdf)
+[The Testing.md File is here](https://github.com/Carrie8348/handy-thoughts/blob/main/documentations/manual_testing_testing.md)
 
 ## Deployment
 #### Heroku
