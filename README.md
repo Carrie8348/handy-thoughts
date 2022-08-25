@@ -521,7 +521,7 @@ On the footer, there is a sign-up form embedded from Mailchimp. It is an excelle
 
 ## Testing
 Testing information can be found in separate TESTING—MD file.
-[The Testing.md File is here](https://github.com/Carrie8348/handy-thoughts/blob/main/sitemap.xml)
+[The Testing.md File is here](https://github.com/Carrie8348/handy-thoughts/blob/main/documentations/pdfs/Manual%20Testing%20doc.pdf)
 
 ## Deployment
 #### Heroku
