@@ -3,7 +3,13 @@
 # Handy Thoughts
 ## Dedicated to the Journal Lovers
 
+
+![image](documentations/pics/mock-up.png)
+
+
 [The Website](https://handythoughtsshop.herokuapp.com/)
+
+
 
 ## Introduction
 
@@ -172,8 +178,9 @@ Each page features a footer on the bottom, with our social media link displayed.
 - The footer on the big screen
 ![image](documentations/pics/footer.png)
 - The footer on the small screen
-
+<p align="center">
 <img src="documentations/pics/footer-on-small-screen.png" width="200">
+</p>
 
 #### Home Page
 
@@ -182,8 +189,9 @@ Only the home page features a background picture (I take a picture of my journal
 - Homepage on big screen
 ![image](documentations/pics/homepage.png)
 - Homepage on small screen
-
+<p align="center">
 <img src="documentations/pics/homepage-on-small-screen.png" width="200">
+</p>
 
 #### All Products Page
 
@@ -194,8 +202,9 @@ Users can click on a specific product to view its detail of the product.
 - All Products Page on big screen
 ![image](documentations/pics/all-products.png)
 - All Products Page on small screen
-
+<p align="center">
 <img src="documentations/pics/all-products-mobile.png" width="200">
+</p>
 
 #### Product Detail Page
 
@@ -204,8 +213,9 @@ This page shows specific product information to the user, with a product picture
 - Product Detail Page on big screen
 ![image](documentations/pics/product-detail-big-screen.png)
 - Product Detail Page on small screen
-
+<p align="center">
 <img src="documentations/pics/product-detail-small-screen.png" width="200">
+</p>
 
 #### Profile Page
 
@@ -216,8 +226,9 @@ There is an order history listed next to the form. It shows the order number, or
 - Profile Page on big screen
 ![image](documentations/pics/profile-big-screen.png)
 - Profile Page on small screen
-
+<p align="center">
 <img src="documentations/pics/profile-small-screen.png" width="200">
+</p>
 
 #### Contact Page
 This page contains a form open to anyone visiting our shop. They can leave their email address, requests, or questions by clicking the button. 
@@ -229,8 +240,9 @@ In the admin panel, the super user/site owner can see the content of the message
 - Contact Page on big screen
 ![image](documentations/pics/contact-big-screen.png)
 - Contact Page on small screen
-
+<p align="center">
 <img src="documentations/pics/contact-small-screen.png" width="200">
+</p>
 
 #### Shopping Cart Page
 
@@ -241,14 +253,16 @@ If there is nothing in the shopping cart, it appears with one message" Your shop
 - Shopping Cart Page on big screen - with Item
 ![image](documentations/pics/shopping-cart-big-screen-with-item.png)
 - Shopping Cart Page on small screen - with Item
-
+<p align="center">
 <img src="documentations/pics/shopping-cart-with-item-small-screen.png" width="200">
+</p>
 
 - Shopping Cart Page on big screen - Empty
 ![image](documentations/pics/shopping-cart-empty-big-screen.png)
 - Shopping Cart Page on small screen - Empty
-
+<p align="center">
 <img src="documentations/pics/shopping-cart-empty-small-screen.png" width="200">
+</p>
 
 #### Checkout Page
 
@@ -260,9 +274,9 @@ When the user clicks the "Complete Order" button, there will be a loading blue p
 - Checkout Page on big screen
 ![image](documentations/pics/checkout-big-screen.png)
 - Checkout Detail Page on small screen
-
+<p align="center">
 <img src="documentations/pics/checkout-small-screen.png" width="200">
-
+</p>
 
 #### Checkout Success Page
 
@@ -271,9 +285,9 @@ This page shows the information after the user makes a successful payment. Order
 - Checkout Success Page on big screen
 ![image](documentations/pics/checkout-success-big-screen.png)
 -Checkout Success Page on small screen
-
+<p align="center">
 <img src="documentations/pics/checkout-success-small-screen.png" width="200">
-
+</p>
 
 #### About Us Page
 
@@ -282,9 +296,9 @@ This page shows our users the information about "who we are." User can click on 
 - About Us Page on big screen
 ![image](documentations/pics/about-us-big-screen.png)
 - About Us Page on small screen
-
+<p align="center">
 <img src="documentations/pics/about-us-small-screen.png" width="200">
-
+</p>
 
 #### Shipping Policy Page
 
@@ -293,8 +307,9 @@ This page shows the shipping policy of our website. User can click on the link l
 - Shipping Policy Page on big screen
 ![image](documentations/pics/shipping-policy-big-screen.png)
 - Shipping Policy Page on small screen
-
+<p align="center">
 <img src="documentations/pics/shipping-policy-small-screen.png" width="200">
+</p>
 
 #### Register
 
@@ -303,8 +318,9 @@ This page is a simple bootstrap template with input fields for users to fill out
 - Register Page on big screen
 ![image](documentations/pics/register-big-screen.png)
 - Register Page on small screen
-
+<p align="center">
 <img src="documentations/pics/register-small-screen.png" width="200">
+</p>
 
 #### Log In
 
@@ -313,8 +329,9 @@ This page is a simple bootstrap template with input fields for users log in with
 - Log In Page on big screen
 ![image](documentations/pics/log-in-big-screen.png)
 - Log In Page on small screen
-
+<p align="center">
 <img src="documentations/pics/log-in-small-screen.png" width="200">
+</p>
 
 #### Sign Out
 
@@ -323,19 +340,75 @@ This page is a simple bootstrap template with two buttons for user to either "ca
 - Sign Out Page on big screen
 ![image](documentations/pics/sign-out.png)
 - Sign Out on small screen
-
+<p align="center">
 <img src="documentations/pics/sign-out-page-on-small-screen.png" width="200">
+</p>
 
 #### Product Review Page
+This page features a Review function for user to review the product. User can click on the Review button under the product detail area, and be redirected to the "Add a review" page. With their review left, and click the button, the review will be shown under the same product detail page. This only works for log in user. User who hasn't log in, when they click the button, they will be redirected to the log-in page.
+
+- Review Button 
+
+![image](documentations/pics/Reviews-button.png)
+
+- Add Review Page on big screen
+
+![image](documentations/pics/Add-review-big-screen.png)
+
+- Add Review Page on small screen
+<p align="center">
+<img src="documentations/pics/add-review-small-screen.png" width="200">
+</p>
+
+- Review showing on big screen
+
+![image](documentations/pics/review-shown-big-screen.png)
+- Review showing on small screen
+<p align="center">
+<img src="documentations/pics/review-shwon-small-screen.png" width="200">
+</p>
 
 #### Product Management Page
 
-#### Toast
+This page is only for superuser. When superuser click the account icon on header nav, choose "Product Management", they will be redirected to this page, so they don't need to go back to the admin panel for adding products.There is a form included on the page and a button to send the request to the database. Once the product is added, it will be shown among the products.
+
+And another two product management function is living in product detail page, only superuser can see two links under the prodcut friendly name "Edit" and "Delete". When superuser clicks "edit" links, they will be redirected to the Edit page, simlar as Add product page, it contains a form and a button to send request to the database. When superuser clicks "delete", there will only be a message showing it is being deleted, and it won't be existed in the products anymore.
+
+- Product Management Page on big screen - Add Product
+<p align="center">
+<img src="documentations/pics/product-management-big-screen.png" width="200">
+</p>
+- Product Management Page on small screen - Add Product
+<p align="center">
+<img src="documentations/pics/product-management-add-small-screen1.png" width="200">
+<img src="documentations/pics/product-management-add-small-screen2.png" width="200">
+</p>
+
+- Product Management Page on big screen - Edit Product
+
+![image](documentations/pics/product-edit-big-screen1.png)
+![image](documentations/pics/product-edit-big-screen2.png)
+
+- Product Management Page on small screen - Edit Product
+<p align="center">
+<img src="documentations/pics/product-edit-small-screen1.png" width="200">
+<img src="documentations/pics/product-edit-small-screen2.png" width="200">
+</p>
+
+
+
+#### Toast and Message
+
 This project features Toast to show the message on the top right corner when user interating with the site. It appears both on big and small screens.
 Example:
-
-![image](documentations/pics/toast.png)
-
+- Small Toast Message Box
+<p align="center">
+<img src="documentations/pics/toast.png" width="200">
+</p>
+- Big Toast Message Box
+<p align="center">
+<img src="documentations/pics/toast-big.png" width="200">
+</p>
 
 ## Information Architecture
 ### Database Modelling
@@ -459,8 +532,9 @@ For marketing purposes, creating a Facebook Page is very important for business 
 Here below are the screen captures of the FB page.
 
 - The profile picture on fb page
-
+<p align="center">
 <img src="documentations/pics/fb/fb-profile-pic.jpeg" width="200">
+</p>
 
 - The fb page screen capture
 ![image](documentations/pics/fb/fb-page-screen-capture.png)
