@@ -7,6 +7,7 @@
 - Browser Validation
 - User Testing
 
+
 ## Test User Stories
 ######  As a user, I can view products on the site without registering.
 - All website users can view the products on the side without registering themselves. They can use the search bar to look for the product. They can click the product detail page and see the product picture, description, and price. 
@@ -46,6 +47,8 @@
 
 
 ### Manual Testing
+
+[Manual Testing](Handythoughts-testing.pdf)
 
 Have a user-friendly B2C website to boom the sales, and also bring great functional designed journals/planners to the users who need them. The B2C model makes the display and purchasing more convenient. As a niche, it already contains a wide range of users. It’d be nice to get their attention and have the sales take off.
 #### Header
