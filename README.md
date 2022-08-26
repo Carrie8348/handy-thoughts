@@ -559,6 +559,7 @@ On the footer, there is a sign-up form embedded from Mailchimp. It is an excelle
 ## Bugs
 - Wishlist Error: My biggest issue was when I tried to create a wishlist app. I had a blurry idea thinking it was more like a "shopping cart" function, but somehow, I wasn't clear about whether the user has an OneToOne relationship. I added an AUTH.USER.Model, which I set in the Products model. That worked for that time, but when I tried to deploy the project on Heroku, it threw an error about it violating the M2M rules. 
 - Solution: After talking to my mentor Harry Dhillon, he walked me through the idea of a wishlist and showed me the logic of it. In the end, I added a new app called "wishlist" and put the models in there, and it worked out fine.
+- Added the wrong secret key in env.py file, and can't load up test enviorment: Before Ger pointed it out, I wasn't sure why I could not load the test site anymore. So I had to commit every single time even for a small line change. That also caused me to commit way too many times.
 
 
 - Wishlist Migration Error: The Wishlist app was added after the project got deployed on Heroku. After I added the model, I couldn't make migrations. Threw errors and complaints there was no secret key.
@@ -587,10 +588,12 @@ On the footer, there is a sign-up form embedded from Mailchimp. It is an excelle
 - GitHub: To keep the project after pushing.
 - Heroku: To deploy the project.
 - Keynote: Design my logo, draw my wireframes
+- Placeit : For mockup picture.
+- Formatter: In gitpod, I use it to make my HTML file readable.
 
 ## Testing
 Testing information can be found in separate TESTING—MD file.
-[The Testing.md File is here](https://github.com/Carrie8348/handy-thoughts/blob/main/documentations/manual_testing_testing.md)
+[The Testing.md File is here](https://github.com/Carrie8348/handy-thoughts/blob/main/documentations/manual_testing/testing.md)
 
 ## Deployment
 #### Heroku
